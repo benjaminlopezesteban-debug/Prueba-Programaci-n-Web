@@ -1,0 +1,141 @@
+Desarrollo fullstack. 
+
+spring boot buenas practicas. 
+
+hay que seguir el formato url. Que sigan las buenas prácticas. 
+
+map es el concepto más dificil de los arreglos u colecciones . Ya que si solicita una key de un estructura de datos json habria que configurar para extraer ese solo datos. 
+
+Las validaciones se pueden ahorrar con notaciones de jakarta con @requestbody. Haci puedo evitar realizar anidaciones de validaciones. 
+
+Hay modelos como objeto que se pide, no se guarda en la base de datos si no es objeto para transferir datos. 
+
+Hay que manejar try catch en todas las funciones, la aplicacion no se puede caer, debe de retornar un error en caso de falla. 
+
+Hay que seguir los pasos de la guia: patron CSR
+
+No olvidarse de utilizar las anotaciones. ejm. ocupar variables para guardar datos, si no tiene el @repository (notacion) los datos guardados en una variable no tendran persistencia en guardar los datos. 
+
+Hay una pagina para poder practicar y ayudar en progamación con java. Se llama codewars, es una buena forma de practicar logica y datos. 
+
+Como encontrar errores en mi programación. Lo mejor es ocupar run and debug para que cuando la funcion llegue hacia la linea del error. ver que datos o condiciones estan erradas, sabiendo donde estan los errores. 
+
+Volver a preguntar al profesor como utilizar las run y debug de vs code. Con el ejemplo de mi proyecto en vs code. Se puede puntear en los errores posibles para pausar la ejecucion del codigo y revisar el valor de las variables. 
+
+
+Codigo 
+
+package ejemplo.trabajo.demo.repository;
+
+import ejemplo.trabajo.demo.model.Libro;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class LibroRepository {
+    //Arreglo que guarda los libros
+    private List<Libro> listaLibros = new ArrayList<>();
+
+    //lista que devuelve todos los libros de la lista
+    public List<Libro> obtenerLibros(){
+        return listaLibros;
+    }
+
+    //buscar un libro por la ide 
+
+    public Libro buscarIdLibro(int id){
+        for (Libro x : listaLibros){
+            if (x.getId() ==  id){
+                return x;
+            }
+        }
+        return null;
+    }
+
+    //buscar libro por su ISBN
+
+    public Libro buscarPorIsbn(String isbn){
+        for(Libro libro : listaLibros){
+            if(libro.getIsbn().equals(isbn)){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    //metodo guarda el libro en el arreglo y retorna el libo 
+    public Libro guardar(Libro lib){
+        listaLibros.add(lib);
+        return lib;
+    }
+
+    //metodo para actualizar el libro por el id
+    public Libro actualizar(Libro lib){
+
+        int id = 0;
+        int idPosicion = 0;
+
+        for (int i = 0; i < listaLibros.size(); i++){
+            if(listaLibros.get(i).getId() == lib.getId()){
+                id = lib.getId();
+                idPosicion = i;
+            }
+        }
+        Libro libro1 = new Libro();
+        libro1.setId(id);
+        libro1.setTitulo(lib.getTitulo());
+        libro1.setAutor(lib.getAutor());
+        libro1.setFechaPublicacion(lib.getFechaPublicacion());
+        libro1.setEditorial(lib.getEditorial());
+        libro1.setIsbn(lib.getIsbn());
+
+        listaLibros.set(idPosicion, libro1);
+        return libro1;
+    }
+
+    //metodos utilizados para eliminar items en un arreglo 
+    public void eliminar(int id){
+        //alternativa 1
+        Libro libro = buscarIdLibro(id);
+        if (libro != null){
+            listaLibros.remove(libro);
+        }
+    }
+}
+
+
+</properties>
+	<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+ 
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <optional>true</optional>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+
+

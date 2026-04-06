@@ -1,0 +1,7 @@
+Crear repositorio en github:
+
+La idea que el repositorio tenga los archivos de código y las librerias, la idea es adherir .gitignore para que no "se vean" archivos que deseamos que esten. 
+eligir visibilidad dependiendo del caso de uso. 
+
+
+postman. Gratis para poder visualizar las apis, para comprobar las respuestas de las api. Es nuestro evaluador, se puede guardar cada consulta que vayamos realizando en nuestro proyecto, permitiendo tener una trayectoria hi storica de las respuestas por ende del avance en el proyecto. 

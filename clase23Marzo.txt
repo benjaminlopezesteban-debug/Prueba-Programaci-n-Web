@@ -1,0 +1,29 @@
+Desarrollo fullstack.
+
+Práctica y ejercicios de validaciones:
+
+1¬ general proyecto en spring con default maven jav 21. adherir dependencias spring web y lombok 
+2° Crear la estructura del packge
+3° Crear el modelo Clase
+4° Declarar las notaciones spring web, lombok y Jakarta.
+
+
+Rubén (QA y Cliente) lidera la validación, con apoyo de Alexis (Analista) y Orelien (Diseñador). Se sigue un plan estructurado:
+
+Revisión de la trazabilidad: El equipo verifica que cada requisito funcional (RF-01 a RF-08) tenga su correspondiente representación en los diagramas UML y en los mockups. Alexis presenta una matriz de trazabilidad que vincula cada requisito con los elementos de diseño.
+
+Elaboración del plan de pruebas: Rubén desarrolla un plan de pruebas basado en los requisitos documentados. Se definen casos de prueba para cada funcionalidad crítica. Por ejemplo:
+
+*Caso de prueba CP-01:* Registrar un usuario con todos los campos válidos → resultado esperado: usuario registrado y visible en la base de datos.
+
+*Caso de prueba CP-02:* Buscar un libro por título → resultado esperado: lista de coincidencias en menos de 3 segundos.
+
+*Caso de prueba CP-03:* Realizar un préstamo con un usuario que ya tiene 3 préstamos activos → resultado esperado: sistema debe rechazar el préstamo (política de límite).
+
+*Caso de prueba CP-04:* Devolución fuera de plazo → sistema debe calcular multa correctamente.
+
+Revisión de cumplimiento: Rubén verifica que todas las especificaciones (requisitos funcionales y no funcionales) están contempladas en el diseño y que los casos de prueba cubren los criterios de aceptación definidos con el cliente. Se identifican dos aspectos no cubiertos: la generación de reportes (RF-08) no tenía un caso de prueba detallado, y el requisito de rendimiento (RNF-02) no estaba reflejado en los casos de prueba. El equipo los añade en el momento.
+
+Ajustes finales: Con base en la validación, Orelien realiza pequeñas correcciones en los diagramas (por ejemplo, agrega una relación faltante entre la tabla multas y préstamos) y Alexis actualiza el documento de especificaciones para reflejar los casos de prueba acordados.
+
+Resultado: Se obtiene un plan de pruebas documentado (con al menos 8 casos de prueba), una matriz de trazabilidad actualizada y la certeza de que el diseño y las especificaciones están alineados con las necesidades del cliente.

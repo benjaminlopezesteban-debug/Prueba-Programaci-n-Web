@@ -1,0 +1,31 @@
+Desarrollo FullStack.
+
+Clase 20 de marzo..
+
+Qué son las @anotaciones en spring? 
+
+las api se van a conectar al controlador y este se comunicara con el servicio mediante una solicitud y las respuestas, que es el parckete que tiene las reglas de negocio y todas las modificaciones.
+
+Las reglas de negocio o el servicio son los que acceden al repositorio que es por mediante esta instancia "Parte de dato o casi hacia dao", hacia la base de datos del sistema.
+
+
+Todo va a hacer bajo notaciones, nos ahorrara escribir código y configurara este. Una funcion llama a otra funcion y devuelven por todo el camino con datos devuelta. 
+
+Ocuparemos notaciones para, @rest, @map el código, el @servicio(lógica de negocio), @transacciones(varias acciones, cuando se realiza todo las transacciones logra el commit exitoso y se guarda. Cuando hay un error en alguna transaccion se realizar rollback, es importante esta caracteristicas para no registrar datos con errores frecuentes en las conexiones a internet. 
+
+--Vamos a trabajar con tres archivos: controlador(maneja solicitudes y respuestas http), service(contiene la logica de negocio), respositorio/dao(interactua con la base de datos). 
+Se realizara una solicitud de forma escalonada y se entrega una respuesta devuelve por el mismo canal.
+
+___
+
+DEPENDENCIAS
+
+Los archivos que vayamos agregando, hay que agregarlas en el archivo pom.xml. Que bajo el marcado XML tiene entre llaves las dependencias. Cuando necesitemos instalar dependencias tenemos que descargarlo de la página de sprint, deberia de aparecer en el archivo pom.xml entre llaves. 
+
+Revisar los pasos en la guia 1.2.2 
+
+EN GENERAL, REVISAR TODA LA MATERIA. ESTAMOS ATRASADOS. 
+
+1era prueba hay que realizar un endpoint.
+
+		

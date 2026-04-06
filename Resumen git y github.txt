@@ -22,9 +22,15 @@ git config --global user.name benja --- para registrar usuario, pasos previos a 
 
 git commit -m "primera...." -- Para crear el comentario, se deben cargar el comentario en los archivos 
 
+
+
+git branch -M main --Es para crear una rama nueva desde un fuente de código, con esto se puede separar áreas de desarrollo entre distintas personas y equipos un mismo codigo fuente
+
+
+
 git log --oneline --Para revisar el historial de commit resumido 1 commit por linea
 
-git remote add origin https://github.com/benjaminlopezesteban-debug/Prueba-Programaci-n-Web.git --Direccion a vincular con el repositorio de github la URL del repositorio de github se puede extraer del boton verde en la pagina del repositorio. 
+git remote add origin https://github.com/benjaminlopezesteban-debug/Prueba-Programaci-n-Web.git --Direccion a vincular con el repositorio de github la URL del repositorio de github se puede extraer del boton verde en la pagina del repositorio. Decirle al repositorio local donde va a ir las nuevas versiones 
 
 git push u- origin master --Comando que realiza el push hacia el repositorio *Tener atencion al nombre del branch y descargar el token de acceso al repositorio en este caso es:
 
@@ -36,3 +42,13 @@ git fetch origin -- para ver el repositorio online.
 git remote -v para ver los repositorios en referenciados 
 
 git branch -M main -- para renombrar a main el nombre del branch
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Bueno para poder trabajar desde un repositorio de github hay que primero clonar el repositorio de la web con el comando
+
+git clone "url que entrega github sobre el repositorio" --y se descargara todos los archivos que se realizaron en el ultimo commit, descargando la totalidad. 
+
+
